@@ -14,15 +14,4 @@ void main() async {
     GoRouter.setUrlPathStrategy(UrlPathStrategy.path);
   }
   runApp(AdminDashboardApp());
-  // return;
-  // runZonedGuarded(() async {
-  //   await Sentry.init(
-  //     (options) {
-  //       options.dsn = "";
-  //     },
-  //     appRunner: () => runApp(AdminTemplateApp()),
-  //   );
-  // }, (exception, stackTrace) async {
-  //   errorLog("RunZonedGuard error: $exception", stackTrace);
-  // });
 }

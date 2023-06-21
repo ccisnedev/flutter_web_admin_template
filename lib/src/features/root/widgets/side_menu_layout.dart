@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_admin_template/src/core/provider/index.dart';
-import 'package:flutter_web_admin_template/src/core/provider/menu_controller.dart';
+import 'package:flutter_web_admin_template/src/core/provider/menu_controller.dart' as mc; 
 import 'package:flutter_web_admin_template/src/features/root/data/menu_model.dart';
 import 'package:go_router/go_router.dart';
 import 'package:skadi/skadi.dart';
@@ -86,7 +86,7 @@ class _MenuList extends StatelessWidget {
   const _MenuList({Key? key}) : super(key: key);
 
   void onNavigate(BuildContext context, MenuModel menu) {
-    readProvider<MenuController>(context).menuIndex = menu.index;
+    readProvider<mc.MenuController>(context).menuIndex = menu.index;
     context.go("/home/${menu.title.toLowerCase()}");
     if (SkadiResponsive.screenWidth <= 800) {
       Navigator.pop(context);
@@ -95,7 +95,7 @@ class _MenuList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final menuController = watchProvider<MenuController>(context);
+    final menuController = watchProvider<mc.MenuController>(context);
     String location = GoRouter.of(context).location.split("/").last;
     return Column(
       children: kMenuList.map((menu) {

@@ -45,13 +45,13 @@ class DioHttpClient {
   }
 }
 
-_parseJson(String text) {
-  return compute(_parseAndDecode, text);
-}
+// _parseJson(String text) {
+//   return compute(_parseAndDecode, text);
+// }
 
-_parseAndDecode(String response) {
-  return jsonDecode(response);
-}
+// _parseAndDecode(String response) {
+//   return jsonDecode(response);
+// }
 
 const JsonDecoder decoder = JsonDecoder();
 const JsonEncoder encoder = JsonEncoder.withIndent('  ');

@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_web_admin_template/src/core/constant/app_theme_color.dart';
 import 'package:flutter_web_admin_template/src/core/provider/auth_provider.dart';
-import 'package:flutter_web_admin_template/src/core/provider/menu_controller.dart';
+import 'package:flutter_web_admin_template/src/core/provider/menu_controller.dart' as mc;
 import 'package:flutter_web_admin_template/src/core/router/main_router.dart';
 import 'package:flutter_web_admin_template/src/features/register/register_page.dart';
 import 'package:get_it/get_it.dart';
@@ -80,7 +80,7 @@ class AdminDashboardApp extends StatelessWidget {
 
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (c) => MenuController()),
+        ChangeNotifierProvider(create: (c) => mc.MenuController()),
       ],
       child: OKToast(
         position: ToastPosition.bottom,

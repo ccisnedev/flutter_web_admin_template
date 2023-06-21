@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_web_admin_template/src/core/provider/index.dart';
-import 'package:flutter_web_admin_template/src/core/provider/menu_controller.dart';
+import 'package:flutter_web_admin_template/src/core/provider/menu_controller.dart' as mc;
 import 'package:flutter_web_admin_template/src/core/router/main_router.dart';
 import 'package:flutter_web_admin_template/src/features/customer/customer_page.dart';
 import 'package:flutter_web_admin_template/src/features/inventory/inventory_page.dart';
@@ -31,7 +31,7 @@ class RootPage extends StatefulWidget {
 
 class _RootPageState extends State<RootPage> {
   late PageController pageController;
-  late MenuController menuController = readProvider<MenuController>(context);
+  late mc.MenuController menuController = readProvider<mc.MenuController>(context);
 
   Map<String, Widget> get pages => {
         AppRoutes.dashboard: const DashboardPage(),

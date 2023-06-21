@@ -22,6 +22,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
     return productListManager.when(
       ready: (data) {
         late DummyProduct product = data.firstWhere((element) => element.id == widget.productId);
+        debugPrint("product: $product");
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
